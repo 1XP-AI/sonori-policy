@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보처리방침 — AI 실시간 통역</title>
+<meta name="description" content="AI 실시간 통역(Android) 개인정보처리방침. 서버를 운영하지 않으며 사용자 데이터를 수집하지 않습니다.">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin:0 auto; max-width:44rem; padding:2.5rem 1.25rem 5rem;
+         font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;
+         color:#1a1a1c; background:#fff; word-break:keep-all; }
+  h1 { font-size:1.7rem; line-height:1.35; margin:0 0 .5rem; letter-spacing:-.02em; }
+  h2 { font-size:1.15rem; margin:2.5rem 0 .6rem; letter-spacing:-.01em; }
+  p, li { margin:.6rem 0; }
+  ul { padding-left:1.2rem; }
+  code { background:rgba(127,127,127,.14); padding:.1em .35em; border-radius:4px; font-size:.9em; }
+  em { color:#666; font-style:normal; font-size:.92rem; }
+  a { color:#2b6cd4; }
+  hr { border:0; border-top:1px solid rgba(127,127,127,.25); margin:2.5rem 0; }
+  @media (prefers-color-scheme: dark) {
+    body { color:#e9e9ec; background:#121214; }
+    em { color:#9a9aa2; } a { color:#7fb0ff; }
+  }
+</style>
+</head>
+<body>
+<h1>개인정보처리방침 — AI 실시간 통역 (Android)</h1>
+<p><em>최종 수정일: 2026-07-31</em></p>
+<p>AI 실시간 통역(&quot;이 앱&quot;)은 실시간 음성 통역 앱입니다. 이 방침은 여러분의 데이터에 무슨 일이</p>
+<p>일어나는지를 설명합니다. 요약하면: **저희는 서버를 운영하지 않고, 여러분에 대해 아무것도 수집하지</p>
+<p>않습니다.<strong> 번역은 </strong>여러분이 직접 발급한 API 키**로 Google의 Gemini API가 수행합니다.</p>
+<h2>만든 사람</h2>
+<p>이 앱은 개인 개발자가 만들었습니다. 여러분의 콘텐츠를 받는 백엔드 서버를 운영하지 않으며,</p>
+<p>계정 시스템이 없습니다.</p>
+<h2>기기에만 저장되는 것</h2>
+<p>다음은 <strong>여러분의 기기에만</strong> 저장되며, 저희에게 전송되지 않습니다.</p>
+<ul>
+<li><strong>Google Gemini API 키</strong> — Android Keystore의 하드웨어 보호 키로 암호화(AES-256/GCM)되어</li>
+</ul>
+<p>  앱 전용 저장소에 보관됩니다.</p>
+<ul>
+<li><strong>앱 설정</strong> — 통역 대상 언어, 통역 음성, 통역 컨텍스트(주제·용어 메모), 출력 경로,</li>
+</ul>
+<p>  캡처 모드, 화면 유지 여부.</p>
+<ul>
+<li><strong>인앱 브라우저의 방문 기록·북마크</strong> — 주소창의 추천 목록을 만들기 위해 기기 내부</li>
+</ul>
+<p>  저장소에만 보관합니다. 페이지 내용이나 로그인 정보를 따로 수집·전송하지 않으며,</p>
+<p>  브라우저 쿠키·세션은 안드로이드 WebView가 앱 전용 영역에 관리합니다.</p>
+<p>앱을 삭제하면 위 데이터는 함께 사라집니다.</p>
+<h2>Google(Gemini API)로 전송되는 것</h2>
+<p>통역을 위해 이 앱은 <strong>여러분이 캡처한 오디오</strong>와 그로부터 생성된 <strong>텍스트</strong>를</p>
+<p><strong>Google Gemini API</strong>로 전송합니다. 인증에는 <strong>여러분 자신의 API 키</strong>를 사용합니다.</p>
+<p>이것은 여러분의 기기와 Google 사이의 직접 연결이며, 저희 서버를 거치지 않습니다.</p>
+<p>오디오의 출처는 둘 중 하나입니다.</p>
+<p>1. <strong>마이크 모드</strong> — 기기 마이크로 들어오는 소리. 통역 세션이 실행 중일 때만 마이크가 열립니다.</p>
+<p>2. <strong>시스템 오디오 모드</strong> — 같은 기기의 <strong>다른 앱이 재생 중인 소리</strong>. 이 모드는</p>
+<p>   Android의 화면·오디오 공유 동의를 <strong>세션마다</strong> 받아야 시작되며, 동의는 저장되지 않아</p>
+<p>   시작할 때마다 다시 물어봅니다. 이때에도 <strong>화면 이미지는 캡처하지 않습니다</strong> —</p>
+<p>   이 앱은 화면 픽셀을 읽는 코드를 갖고 있지 않습니다. 또한 캡처 대상은 미디어·게임 재생</p>
+<p>   오디오로 한정되어 있어 <strong>통화 음성은 캡처 대상이 아닙니다.</strong></p>
+<p>이 데이터는 <strong>Google의 개인정보처리방침 및 Gemini API 약관</strong>에 따라 Google이 처리합니다.</p>
+<ul>
+<li>https://policies.google.com/privacy</li>
+<li>https://ai.google.dev/gemini-api/terms</li>
+</ul>
+<p>이 앱은 오디오를 <strong>녹음하거나 저장하지 않습니다.</strong> 번역을 위해 스트리밍한 뒤 버립니다.</p>
+<p>저희는 그 오디오를 받지 않습니다. 화면에 표시되는 자막도 메모리에만 있으며 파일로 남지 않습니다.</p>
+<p>선택 기능인 <strong>AI 브리프</strong>는 여러분이 입력한 주제 키워드를 같은 Gemini API로 보내</p>
+<p>(Google 검색 그라운딩과 함께) 용어 정리를 받아옵니다. 이 역시 여러분의 키로 이루어집니다.</p>
+<h2>그 밖의 네트워크 연결</h2>
+<ul>
+<li><strong>API 키 발급 도우미</strong> — 설정의 &quot;무료 키 받기&quot;를 누르면 Google AI Studio</li>
+</ul>
+<p>  (<code>aistudio.google.com</code>)가 브라우저 탭으로 열립니다. 평범한 브라우저 세션이며,</p>
+<p>  이 앱은 그 과정에 개입하지 않습니다.</p>
+<p>이 앱이 연결하는 곳은 위와 Gemini API(<code>generativelanguage.googleapis.com</code>)가 전부입니다.</p>
+<p>모든 연결은 TLS로 암호화됩니다.</p>
+<h2>저희가 <strong>하지 않는</strong> 것</h2>
+<ul>
+<li>여러분의 데이터를 저희 쪽으로 수집·저장·전송하지 <strong>않습니다</strong>.</li>
+<li>애널리틱스·광고·크래시 리포팅 SDK를 사용하지 <strong>않습니다</strong>. 하나도 넣지 않았습니다.</li>
+<li>앱이나 웹사이트를 넘나들며 여러분을 추적하지 <strong>않습니다</strong>.</li>
+<li>사용자 계정이 <strong>없습니다</strong>. 로그인도 회원가입도 없습니다.</li>
+<li>접근성 서비스를 사용하지 <strong>않습니다</strong>.</li>
+<li>광고 ID·기기 ID·위치·연락처를 읽지 <strong>않습니다</strong>.</li>
+</ul>
+<h2>권한</h2>
+<ul>
+<li><strong>마이크</strong> — 통역 중일 때만, 통역할 음성을 캡처하기 위해 사용합니다. 녹음하지 않습니다.</li>
+<li><strong>알림</strong> — 통역 세션이 실행 중임을 알리는 진행 중 알림을 표시하기 위해 사용합니다.</li>
+</ul>
+<p>  거부해도 통역은 동작하며, 알림만 보이지 않습니다.</p>
+<ul>
+<li><strong>화면·오디오 공유(시스템 오디오 모드)</strong> — Android가 세션마다 직접 물어봅니다.</li>
+</ul>
+<p>  거부하면 시스템 오디오 모드만 사용할 수 없고, 마이크 모드는 그대로 동작합니다.</p>
+<h2>아동</h2>
+<p>이 앱은 아동을 대상으로 하지 않습니다.</p>
+<h2>여러분의 선택</h2>
+<ul>
+<li>설정의 &quot;키 삭제&quot;로 API 키를 언제든 지울 수 있습니다.</li>
+<li>통역 세션은 언제든 정지할 수 있으며, 진행 중 알림에서도 정지할 수 있습니다.</li>
+<li>앱을 삭제하면 기기에 저장된 모든 데이터가 삭제됩니다.</li>
+<li>저희 서버에 보관되는 데이터가 없으므로, 저희에게 삭제를 요청할 대상 자체가 없습니다.</li>
+</ul>
+<p>  Google로 전송된 데이터에 대해서는 여러분의 Google 계정 설정을 참고하세요.</p>
+<h2>변경</h2>
+<p>이 방침이 바뀌면 위의 &quot;최종 수정일&quot;이 함께 바뀝니다.</p>
+<h2>문의</h2>
+<p>hello@1xp.com</p>
+<hr>
+<h1>Privacy Policy — Sonori (Android)</h1>
+<p><em>Last updated: 2026-07-30</em></p>
+<p>Sonori (&quot;the App&quot;) is a real-time speech interpretation app. The short</p>
+<p>version: <strong>we run no servers and collect nothing about you.</strong> Translation is performed</p>
+<p>by Google&#x27;s Gemini API using an API key that <strong>you</strong> provide.</p>
+<h2>Who we are</h2>
+<p>The App is developed by an independent developer. We operate no backend servers that</p>
+<p>receive your content, and there is no account system.</p>
+<h2>What stays on your device</h2>
+<ul>
+<li>Your <strong>Google Gemini API key</strong>, encrypted with AES-256/GCM under a hardware-backed</li>
+</ul>
+<p>  key held in the Android Keystore, in app-private storage.</p>
+<ul>
+<li>App <strong>settings</strong>: target language, voice, interpreting context notes, output route,</li>
+</ul>
+<p>  capture mode, keep-screen-on.</p>
+<p>Uninstalling the App removes all of it.</p>
+<h2>What is sent to Google (Gemini API)</h2>
+<p>To translate, the App sends the <strong>audio you capture</strong> and the resulting <strong>text</strong> to the</p>
+<p><strong>Google Gemini API</strong>, authenticated with <strong>your own API key</strong>. This is a direct</p>
+<p>connection between your device and Google; it does not pass through us.</p>
+<p>The audio comes from one of two sources:</p>
+<p>1. <strong>Microphone mode</strong> — the device microphone, open only while a session is running.</p>
+<p>2. <strong>System audio mode</strong> — audio that <strong>another app on the same device is playing</strong>.</p>
+<p>   This requires Android&#x27;s own screen-and-audio sharing consent, granted **for every</p>
+<p>   session**; the consent cannot be cached, so Android asks again each time. Even then,</p>
+<p>   <strong>no screen image is captured</strong> — the App contains no code that reads screen pixels.</p>
+<p>   Capture is restricted to media and game playback, so <strong>call audio is out of scope.</strong></p>
+<p>Google processes this data under <strong>Google&#x27;s Privacy Policy and the Gemini API Terms</strong>:</p>
+<ul>
+<li>https://policies.google.com/privacy</li>
+<li>https://ai.google.dev/gemini-api/terms</li>
+</ul>
+<p>The App does not record, store, or retain your audio. It is streamed for translation and</p>
+<p>discarded. We never receive it. Subtitles exist in memory only and are not written to disk.</p>
+<p>The optional <strong>AI brief</strong> feature sends the topic keywords you type to the same Gemini API</p>
+<p>(with Google Search grounding), again under your own key.</p>
+<h2>Other network connections</h2>
+<ul>
+<li><strong>Getting an API key</strong> — tapping &quot;get a free key&quot; in Settings opens Google AI Studio</li>
+</ul>
+<p>  (<code>aistudio.google.com</code>) in a browser tab. That is an ordinary browser session.</p>
+<p>Those, plus the Gemini API (<code>generativelanguage.googleapis.com</code>), are the only hosts the</p>
+<p>App connects to. All connections use TLS.</p>
+<h2>What we do NOT do</h2>
+<ul>
+<li>We do <strong>not</strong> collect, store, or transmit your data to ourselves.</li>
+<li>We use <strong>no</strong> analytics, advertising, or crash-reporting SDKs. None at all.</li>
+<li>We do <strong>not</strong> track you across apps or websites.</li>
+<li>There are <strong>no</strong> user accounts.</li>
+<li>We do <strong>not</strong> use any accessibility service.</li>
+<li>We do <strong>not</strong> read advertising IDs, device IDs, location, or contacts.</li>
+</ul>
+<h2>Permissions</h2>
+<ul>
+<li><strong>Microphone</strong> — used only while you are interpreting, to capture the speech to be</li>
+</ul>
+<p>  translated. Nothing is recorded.</p>
+<ul>
+<li><strong>Notifications</strong> — to show the ongoing notification while a session runs. Denying it</li>
+</ul>
+<p>  does not stop interpretation; only the notification is hidden.</p>
+<ul>
+<li><strong>Screen and audio sharing (system audio mode)</strong> — requested by Android itself, every</li>
+</ul>
+<p>  session. Declining it disables only that mode; microphone mode still works.</p>
+<h2>Children</h2>
+<p>The App is not directed to children.</p>
+<h2>Your choices</h2>
+<ul>
+<li>Remove your API key at any time in Settings (&quot;delete key&quot;).</li>
+<li>Stop a session at any time, from the app or from the ongoing notification.</li>
+<li>Uninstalling the App deletes everything stored on the device.</li>
+<li>We hold no data on any server, so there is nothing for us to delete on request. For data</li>
+</ul>
+<p>  sent to Google, see your own Google account settings.</p>
+<h2>Changes</h2>
+<p>If this policy changes, the &quot;Last updated&quot; date above changes with it.</p>
+<h2>Contact</h2>
+<p>hello@1xp.com</p>
+</body>
+</html>
