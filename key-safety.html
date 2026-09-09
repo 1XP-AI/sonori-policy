@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API 키는 어디로 가나요 — Sonori</title>
+<meta name="description" content="소노리에는 서버가 없습니다. 키는 기기에만 저장되고 Google 로만 전송됩니다. 확인 방법과 안전하게 쓰는 3단계.">
+<style>
+  :root { color-scheme: light dark; }
+  body { margin:0 auto; max-width:44rem; padding:2.5rem 1.25rem 5rem;
+         font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         color:#1a1a1c; background:#fff; }
+  h1 { font-size:1.7rem; line-height:1.35; margin:0 0 .5rem; letter-spacing:-.02em; }
+  h2 { font-size:1.15rem; margin:2.5rem 0 .6rem; letter-spacing:-.01em; }
+  h3 { font-size:1rem; margin:1.6rem 0 .4rem; }
+  p, li { margin:.6rem 0; }
+  ul { padding-left:1.2rem; }
+  code { background:rgba(127,127,127,.14); padding:.1em .35em; border-radius:4px; font-size:.9em; }
+  em { color:#666; font-style:normal; font-size:.92rem; }
+  a { color:#2b6cd4; }
+  hr { border:0; border-top:1px solid rgba(127,127,127,.25); margin:2.5rem 0; }
+  nav { margin-top:3.5rem; font-size:.9rem; }
+  @media (prefers-color-scheme: dark) {
+    body { color:#e9e9ec; background:#121214; }
+    em { color:#9a9aa2; } a { color:#7fb0ff; }
+  }
+</style>
+</head>
+<body>
+<h1>소노리 — API 키는 어디로 가나요</h1>
+<p>소노리에는 <strong>서버가 없습니다.</strong> 여러분이 넣은 Gemini API 키는 이 기기에만 저장되고, 통역하는 동안 Google 의 Gemini API 로만 직접 전송됩니다. 개발자는 키를 받을 수도, 볼 수도 없습니다.</p>
+<h2>확인할 수 있는 사실</h2>
+<ul>
+<li><strong>저장 위치</strong> — iOS: Keychain(암호화). Android: Android Keystore 의 하드웨어 보호 키로 AES-256/GCM 암호화, 앱 전용 저장소. 클라우드 백업에서 제외됩니다.</li>
+<li><strong>전송 목적지</strong> — 앱이 여는 네트워크 연결은 두 곳뿐입니다. <code>generativelanguage.googleapis.com</code> (통역, HTTPS/WSS) 과 <code>aistudio.google.com</code>(‘무료 키 받기’ 화면). 키는 첫 번째 연결의 인증 헤더로만 실립니다.</li>
+<li><strong>수집·분석 없음</strong> — 애널리틱스·광고·크래시 리포팅 SDK 가 하나도 없습니다. 개발자에게 오는 데이터가 없습니다.</li>
+<li><strong>직접 확인</strong> — 네트워크 프록시(Charles, Proxyman, mitmproxy 등)를 기기에 물리면 위 두 호스트 외에는 아무 연결도 없다는 것을 볼 수 있습니다.</li>
+</ul>
+<h2>키 안전하게 쓰기 — 3단계</h2>
+<p>우리를 믿지 않아도 안전하도록, 키 자체에 울타리를 치세요.</p>
+<ul>
+<li><strong>1. 소노리 전용 키를 만드세요.</strong> Google AI Studio 에서 새 키를 만들고 다른 앱·스크립트와 공유하지 마세요. 문제가 생겨도 이 키 하나만 폐기하면 됩니다.</li>
+<li><strong>2. 결제를 연결하지 마세요(무료 등급).</strong> 무료 등급 프로젝트의 키는 남용되더라도 청구가 발생하지 않습니다. 필요하면 Google Cloud 콘솔에서 키를 <strong>Generative Language API 로만 제한</strong>하세요.</li>
+<li><strong>3. 언제든 폐기하세요.</strong> Google AI Studio 에서 키를 삭제하면 그 즉시 어디서도 쓸 수 없습니다. 앱 설정의 ‘키 삭제’는 기기에서 지웁니다.</li>
+</ul>
+<h2>문의</h2>
+<p>developer@1xp.com</p>
+<hr>
+<h1>Sonori — Where your API key goes</h1>
+<p>Sonori has <strong>no servers.</strong> The Gemini API key you enter is stored only on this device and is sent only to Google&#x27;s Gemini API while interpreting. The developer cannot receive or see it.</p>
+<h2>What you can verify</h2>
+<ul>
+<li><strong>Storage</strong> — iOS: the Keychain (encrypted). Android: AES-256/GCM under a hardware-backed Android Keystore key, in app-private storage, excluded from cloud backup.</li>
+<li><strong>Destinations</strong> — the app opens exactly two network connections: <code>generativelanguage.googleapis.com</code> (interpreting, HTTPS/WSS) and <code>aistudio.google.com</code> (the &quot;get a free key&quot; screen). The key travels only as the auth header of the first.</li>
+<li><strong>No analytics</strong> — no analytics, ads, or crash-reporting SDKs. Nothing reaches the developer.</li>
+<li><strong>Check it yourself</strong> — put a network proxy (Charles, Proxyman, mitmproxy) on the device and you will see no connection other than those two hosts.</li>
+</ul>
+<h2>Using your key safely — 3 steps</h2>
+<ul>
+<li><strong>1. Make a key just for Sonori</strong> in Google AI Studio and don&#x27;t share it with other apps or scripts. If anything goes wrong, revoking that one key is enough.</li>
+<li><strong>2. Don&#x27;t attach billing (free tier).</strong> A free-tier key cannot generate charges even if abused. Optionally restrict it to the Generative Language API in the Google Cloud console.</li>
+<li><strong>3. Revoke any time.</strong> Deleting the key in Google AI Studio invalidates it everywhere at once; &quot;Delete key&quot; in the app removes it from the device.</li>
+</ul>
+<p>Questions: developer@1xp.com</p>
+<nav><a href="./">Privacy</a> · <a href="./support.html">Support</a> · <a href="./key-safety.html">API key safety</a> · developer@1xp.com</nav>
+</body>
+</html>
