@@ -31,11 +31,11 @@
 <p>소노리에는 <strong>서버가 없습니다.</strong> 여러분이 넣은 Gemini API 키는 이 기기에 저장되고, Google 의 Gemini API 로만 전송됩니다. 개발자는 키를 받을 수도, 볼 수도 없습니다.</p>
 <h2>확인할 수 있는 사실</h2>
 <ul>
-<li><strong>저장 위치</strong> — iOS: Keychain(암호화). Apple Watch 를 페어링해 설정 동기화를 쓰면 워치의 보안 저장소에도 사본이 저장됩니다(기기 간 직접 전달, 서버 경유 없음). Android: Android Keystore 의 하드웨어 보호 키로 AES-256/GCM 암호화, 앱 전용 저장소, 클라우드 백업 제외.</li>
-<li><strong>키가 실리는 연결은 하나뿐</strong> — <code>generativelanguage.googleapis.com</code>(Google Gemini API). 실시간 통역은 WebSocket 연결의 URL 매개변수(<code>?key=</code>)로, AI 브리프·자막 번역 같은 일반 요청은 <code>x-goog-api-key</code> 헤더로 보냅니다. 통역 중이 아닐 때 키가 쓰이는 경우는 AI 브리프를 직접 생성할 때뿐입니다.</li>
+<li><strong>저장 위치</strong> — iOS: Keychain(암호화). Apple Watch 를 페어링해 설정 동기화를 쓰면 워치의 보안 저장소에도 사본이 저장됩니다(기기 간 직접 전달, 서버 경유 없음). Android: Android Keystore 가 관리하는 키(기기가 지원하면 하드웨어 보호)로 AES-256/GCM 암호화, 앱 전용 저장소, 클라우드 백업 제외.</li>
+<li><strong>키가 실리는 연결은 하나뿐</strong> — <code>generativelanguage.googleapis.com</code>(Google Gemini API). 실시간 통역은 WebSocket 연결의 URL 매개변수(<code>?key=</code>)로, iOS 의 AI 브리프 요청은 <code>x-goog-api-key</code> 헤더로 보냅니다. 통역 중이 아닐 때 키가 쓰이는 경우는 iOS 에서 AI 브리프를 직접 생성할 때뿐입니다(Android 에는 아직 그 기능이 없습니다).</li>
 <li><strong>키가 실리지 않는 연결</strong> — 인앱 브라우저가 여는 웹페이지, ‘무료 키 받기’로 여는 Google AI Studio, iOS 의 원격 기능 플래그(GitHub Gist 공개 파일), 그리고 이 안내 페이지. 이 연결들에는 키가 포함되지 않습니다.</li>
 <li><strong>수집·분석 없음</strong> — 애널리틱스·광고·크래시 리포팅 SDK 가 하나도 없습니다. 개발자에게 오는 데이터가 없습니다.</li>
-<li><strong>직접 확인</strong> — 네트워크 프록시(Charles, Proxyman, mitmproxy 등)를 기기에 물리고 통역을 켜 보세요. 키(<code>AIza…</code>)가 포함된 요청은 <code>generativelanguage.googleapis.com</code> 으로 가는 것뿐입니다.</li>
+<li><strong>직접 확인</strong> — 네트워크 프록시(Charles, Proxyman, mitmproxy 등)를 기기에 물리고 통역을 켜 보세요. iOS 에서는 프록시 인증서를 신뢰시키면 요청 내용까지 보이고, 키(<code>AIza…</code>)가 포함된 요청은 <code>generativelanguage.googleapis.com</code> 으로 가는 것뿐입니다. Android 정식 빌드는 사용자가 설치한 인증서를 신뢰하지 않아 내용은 열리지 않지만(그때는 연결이 실패합니다), 앱이 어느 호스트에 접속하는지는 그대로 보입니다.</li>
 </ul>
 <h2>키 안전하게 쓰기 — 3단계</h2>
 <p>우리를 믿지 않아도 안전하도록, 키 자체에 울타리를 치세요.</p>
@@ -44,6 +44,10 @@
 <li><strong>2. 결제를 연결하지 마세요(무료 등급).</strong> 무료 등급 프로젝트의 키는 남용되더라도 청구가 발생하지 않습니다. 필요하면 Google Cloud 콘솔에서 키를 <strong>Generative Language API 로만 제한</strong>하세요.</li>
 <li><strong>3. 언제든 폐기하세요.</strong> Google AI Studio 에서 키를 삭제하면 그 즉시 어디서도 쓸 수 없습니다. 앱 설정의 ‘키 삭제’는 기기(및 페어링된 워치)에서 지웁니다.</li>
 </ul>
+<h2>관련 문서</h2>
+<ul>
+<li><a href="./android.html">개인정보처리방침 — Android</a> · <a href="./">Privacy Policy — iOS</a> · <a href="./support.html">Support</a></li>
+</ul>
 <h2>문의</h2>
 <p>developer@1xp.com</p>
 <hr>
@@ -51,11 +55,11 @@
 <p>Sonori has <strong>no servers.</strong> The Gemini API key you enter is stored on this device and is sent only to Google&#x27;s Gemini API. The developer cannot receive or see it.</p>
 <h2>What you can verify</h2>
 <ul>
-<li><strong>Storage</strong> — iOS: the Keychain (encrypted); with a paired Apple Watch and settings sync on, a copy also lives in the Watch&#x27;s secure store (device-to-device, no server). Android: AES-256/GCM under a hardware-backed Android Keystore key, app-private storage, excluded from cloud backup.</li>
-<li><strong>The only connection that carries the key</strong> — <code>generativelanguage.googleapis.com</code> (Google Gemini API). Live interpreting sends it as the WebSocket URL&#x27;s <code>?key=</code> parameter; ordinary requests (AI Brief, caption translation) send it in the <code>x-goog-api-key</code> header. Outside a session the key is used only when you generate an AI Brief yourself.</li>
+<li><strong>Storage</strong> — iOS: the Keychain (encrypted); with a paired Apple Watch and settings sync on, a copy also lives in the Watch&#x27;s secure store (device-to-device, no server). Android: AES-256/GCM under an Android Keystore-managed key (hardware-backed where the device supports it), app-private storage, excluded from cloud backup.</li>
+<li><strong>The only connection that carries the key</strong> — <code>generativelanguage.googleapis.com</code> (Google Gemini API). Live interpreting sends it as the WebSocket URL&#x27;s <code>?key=</code> parameter; the iOS AI Brief request sends it in the <code>x-goog-api-key</code> header. Outside a session the key is used only when you generate an AI Brief yourself on iOS (Android has no such feature yet).</li>
 <li><strong>Connections that never carry the key</strong> — pages the in-app browser loads, Google AI Studio opened by &quot;get a free key&quot;, the iOS remote feature flags (a public GitHub Gist file), and this page.</li>
 <li><strong>No analytics</strong> — no analytics, ads, or crash-reporting SDKs. Nothing reaches the developer.</li>
-<li><strong>Check it yourself</strong> — put a network proxy (Charles, Proxyman, mitmproxy) on the device and start interpreting: the only requests containing your key (<code>AIza…</code>) go to <code>generativelanguage.googleapis.com</code>.</li>
+<li><strong>Check it yourself</strong> — put a network proxy (Charles, Proxyman, mitmproxy) on the device and start interpreting. On iOS, trusting the proxy certificate shows request contents: the only requests containing your key (<code>AIza…</code>) go to <code>generativelanguage.googleapis.com</code>. Release builds on Android don&#x27;t trust user-installed certificates, so contents stay sealed (the connection fails instead), but the hosts the app connects to are still visible.</li>
 </ul>
 <h2>Using your key safely — 3 steps</h2>
 <ul>
@@ -63,7 +67,8 @@
 <li><strong>2. Don&#x27;t attach billing (free tier).</strong> A free-tier key cannot generate charges even if abused. Optionally restrict it to the Generative Language API in the Google Cloud console.</li>
 <li><strong>3. Revoke any time.</strong> Deleting the key in Google AI Studio invalidates it everywhere at once; &quot;Delete key&quot; in the app removes it from the device (and a paired Watch).</li>
 </ul>
+<p>Related: <a href="./">Privacy Policy — iOS</a> · <a href="./android.html">Privacy Policy — Android</a> · <a href="./support.html">Support</a></p>
 <p>Questions: developer@1xp.com</p>
-<nav><a href="./">Privacy</a> · <a href="./support.html">Support</a> · <a href="./key-safety.html">API key safety</a> · developer@1xp.com</nav>
+<nav><a href="./">Privacy (iOS)</a> · <a href="./android.html">Privacy (Android)</a> · <a href="./support.html">Support</a> · <a href="./key-safety.html">API key safety</a> · developer@1xp.com</nav>
 </body>
 </html>
