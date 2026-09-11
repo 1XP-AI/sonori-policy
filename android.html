@@ -26,7 +26,7 @@
 </head>
 <body>
 <h1>개인정보처리방침 — AI 실시간 통역 (Android)</h1>
-<p><em>최종 수정일: 2026-09-09</em></p>
+<p><em>최종 수정일: 2026-09-11</em></p>
 <p>AI 실시간 통역(&quot;이 앱&quot;)은 실시간 음성 통역 앱입니다. 이 방침은 여러분의 데이터에 무슨 일이 일어나는지를 설명합니다. 요약하면: <strong>저희는 서버를 운영하지 않고, 여러분에 대해 아무것도 수집하지 않습니다.</strong> 번역은 <strong>여러분이 직접 발급한 API 키</strong>로 Google의 Gemini API가 수행합니다.</p>
 <h2>만든 사람</h2>
 <p>이 앱은 개인 개발자가 만들었습니다. 여러분의 콘텐츠를 받는 백엔드 서버를 운영하지 않으며, 계정 시스템이 없습니다.</p>
@@ -54,15 +54,24 @@
 <ul>
 <li><strong>API 키 발급 도우미</strong> — 설정의 &quot;무료 키 받기&quot;를 누르면 Google AI Studio (<code>aistudio.google.com</code>)가 브라우저 탭으로 열립니다. 평범한 브라우저 세션이며, 이 앱은 그 과정에 개입하지 않습니다.</li>
 </ul>
-<p>이 앱이 연결하는 곳은 위와 Gemini API(<code>generativelanguage.googleapis.com</code>)가 전부입니다. 모든 연결은 TLS로 암호화됩니다.</p>
+<p>이 앱이 연결하는 곳은 위, Gemini API(<code>generativelanguage.googleapis.com</code>), 그리고 아래 &quot;오류 보고와 사용 통계&quot; 절의 Firebase 서버(<code>*.crashlytics.com</code>, <code>app-measurement.com</code>, <code>firebaseinstallations.googleapis.com</code>)가 전부입니다. 모든 연결은 TLS로 암호화됩니다.</p>
+<h2>오류 보고와 사용 통계 (Firebase)</h2>
+<p>앱이 멈추거나 오작동하는 원인을 찾고, 어떤 기능이 실제로 쓰이는지 알기 위해 Google의 <strong>Firebase Crashlytics</strong>(오류 보고)와 <strong>Google Analytics for Firebase</strong>(사용 통계)를 사용합니다. 이때 Google 서버로 전송되는 것은 다음이 전부입니다.</p>
+<ul>
+<li>오류 발생 시: 스택 트레이스, 앱 버전, 기기 모델과 Android 버전, 오류 직전의 통역 설정 (입력 방식·대상 언어).</li>
+<li>사용 통계: 통역 세션의 시작·종료·실패와 그 길이, 입력 방식(마이크/시스템 오디오/브라우저), 대상 언어, 피드백·리뷰 화면을 연 횟수. 여기에 Google Analytics 가 <strong>자동으로</strong> 붙이는 기본 정보 — 앱 열기·업데이트·화면 전환·사용 시간 같은 기본 이벤트, 기기 모델·OS 버전·앱 버전·언어 설정, 그리고 접속 IP 로 추정한 <strong>국가 단위의 대략적 위치</strong> — 가 함께 갑니다. IP 주소 자체는 저장되지 않습니다. 앱 설치마다 무작위로 생성되는 <strong>앱 인스턴스 ID</strong>가 붙습니다(앱을 삭제하면 사라집니다).</li>
+</ul>
+<p><strong>전송되지 않는 것:</strong> 오디오, 자막·번역 텍스트, 통역 컨텍스트, Gemini API 키, 이름·이메일 등 개인정보, 광고 ID, 정밀 위치(위치 권한 자체가 없습니다). 광고 목적으로 사용하지 않으며 다른 앱·사이트와 연결해 추적하지 않습니다. 보관 기간은 Google Firebase 정책을 따릅니다(오류 보고 90일, 사용 통계 2개월 — 저희가 설정한 최소값).</p>
+<h2>피드백 메일</h2>
+<p>설정의 &quot;피드백 보내기&quot;는 여러분의 메일 앱을 열고 앱 버전·기기 모델·Android 버전을 본문에 미리 채워 넣습니다. 보내기를 누르기 전까지는 아무것도 전송되지 않으며, 보내면 그 메일(보낸 사람 주소와 적으신 내용 포함)이 <code>developer@1xp.com</code> 으로 옵니다. 문의 처리 목적으로만 쓰고, 처리가 끝나면 보관하지 않으며, 다른 곳에 넘기지 않습니다. 삭제를 원하시면 같은 주소로 요청해 주세요.</p>
 <h2>저희가 <strong>하지 않는</strong> 것</h2>
 <ul>
-<li>여러분의 데이터를 저희 쪽으로 수집·저장·전송하지 <strong>않습니다</strong>.</li>
-<li>애널리틱스·광고·크래시 리포팅 SDK를 사용하지 <strong>않습니다</strong>. 하나도 넣지 않았습니다.</li>
+<li>오디오·자막·설정 등 여러분의 데이터를 저희 쪽으로 수집·저장·전송하지 <strong>않습니다</strong>.</li>
+<li>광고 SDK를 사용하지 <strong>않습니다</strong>. 위 오류 보고·사용 통계 외의 분석 도구도 없습니다.</li>
 <li>앱이나 웹사이트를 넘나들며 여러분을 추적하지 <strong>않습니다</strong>.</li>
 <li>사용자 계정이 <strong>없습니다</strong>. 로그인도 회원가입도 없습니다.</li>
 <li>접근성 서비스를 사용하지 <strong>않습니다</strong>.</li>
-<li>광고 ID·기기 ID·위치·연락처를 읽지 <strong>않습니다</strong>.</li>
+<li>광고 ID·정밀 위치·연락처를 읽지 <strong>않습니다</strong>.</li>
 </ul>
 <h2>권한</h2>
 <ul>
@@ -85,7 +94,7 @@
 <p>hello@1xp.com</p>
 <hr>
 <h1>Privacy Policy — Sonori (Android)</h1>
-<p><em>Last updated: 2026-09-09</em></p>
+<p><em>Last updated: 2026-09-11</em></p>
 <p>Sonori (&quot;the App&quot;) is a real-time speech interpretation app. The short version: <strong>we run no servers and collect nothing about you.</strong> Translation is performed by Google&#x27;s Gemini API using an API key that <strong>you</strong> provide.</p>
 <h2>Who we are</h2>
 <p>The App is developed by an independent developer. We operate no backend servers that receive your content, and there is no account system.</p>
@@ -111,15 +120,24 @@
 <ul>
 <li><strong>Getting an API key</strong> — tapping &quot;get a free key&quot; in Settings opens Google AI Studio (<code>aistudio.google.com</code>) in a browser tab. That is an ordinary browser session.</li>
 </ul>
-<p>Those, plus the Gemini API (<code>generativelanguage.googleapis.com</code>), are the only hosts the App connects to. All connections use TLS.</p>
+<p>Those, the Gemini API (<code>generativelanguage.googleapis.com</code>), and the Firebase servers described under &quot;Crash reports and usage statistics&quot; below (<code>*.crashlytics.com</code>, <code>app-measurement.com</code>, <code>firebaseinstallations.googleapis.com</code>) are the only hosts the App connects to. All connections use TLS.</p>
+<h2>Crash reports and usage statistics (Firebase)</h2>
+<p>To find out why the App crashes or misbehaves, and which features are actually used, the App uses Google&#x27;s <strong>Firebase Crashlytics</strong> (crash reporting) and <strong>Google Analytics for Firebase</strong> (usage statistics). This is everything that is sent to Google&#x27;s servers:</p>
+<ul>
+<li>On a crash: the stack trace, App version, device model and Android version, and the interpreting settings in effect (capture mode, target language).</li>
+<li>Usage statistics: when an interpreting session starts, ends or fails and how long it ran, the capture mode (microphone / system audio / browser), the target language, and whether the feedback or review screen was opened. Google Analytics adds its <strong>automatic</strong> basics to these: standard events such as app open, app update, screen changes and time in app; device model, OS version, App version and language setting; and a <strong>country-level approximate location</strong> inferred from the connecting IP address (the IP address itself is not stored). Everything carries a random <strong>app-instance ID</strong> generated per installation (it disappears when you uninstall).</li>
+</ul>
+<p><strong>Never sent:</strong> audio, transcripts or translations, translation context, your Gemini API key, personal information such as name or e-mail, advertising IDs, precise location (there is no location permission). Nothing is used for advertising and nothing is linked across apps or websites. Retention follows Google&#x27;s Firebase policy (crash reports 90 days, usage statistics 2 months — the minimum we can set).</p>
+<h2>Feedback e-mail</h2>
+<p>&quot;Send feedback&quot; in Settings opens your own mail app with the App version, device model and Android version pre-filled in the body. Nothing is sent until you press send; when you do, that message (including your sender address and whatever you wrote) arrives at <code>developer@1xp.com</code>. We use it only to handle your request, do not keep it once the request is closed, and never pass it on. Write to the same address if you want it deleted.</p>
 <h2>What we do NOT do</h2>
 <ul>
-<li>We do <strong>not</strong> collect, store, or transmit your data to ourselves.</li>
-<li>We use <strong>no</strong> analytics, advertising, or crash-reporting SDKs. None at all.</li>
+<li>We do <strong>not</strong> collect, store, or transmit your audio, transcripts or settings to ourselves.</li>
+<li>We use <strong>no</strong> advertising SDKs, and no analytics beyond the crash reporting and usage statistics described above.</li>
 <li>We do <strong>not</strong> track you across apps or websites.</li>
 <li>There are <strong>no</strong> user accounts.</li>
 <li>We do <strong>not</strong> use any accessibility service.</li>
-<li>We do <strong>not</strong> read advertising IDs, device IDs, location, or contacts.</li>
+<li>We do <strong>not</strong> read advertising IDs, precise location, or contacts.</li>
 </ul>
 <h2>Permissions</h2>
 <ul>

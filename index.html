@@ -28,8 +28,8 @@
 </head>
 <body>
 <h1>Privacy Policy — Sonori</h1>
-<p><em>Last updated: 2026-09-09</em></p>
-<p>Sonori (&quot;the App&quot;) is a real-time speech interpretation app. This policy explains what happens to your data. The short version: <strong>we run no servers and collect nothing about you.</strong> Translation is performed by Google&#x27;s Gemini API using an API key that <strong>you</strong> provide.</p>
+<p><em>Last updated: 2026-09-11</em></p>
+<p>Sonori (&quot;the App&quot;) is a real-time speech interpretation app. This policy explains what happens to your data. The short version: <strong>we run no servers and collect nothing about you beyond anonymous crash reports and usage statistics — plus whatever you choose to e-mail us.</strong> Translation is performed by Google&#x27;s Gemini API using an API key that <strong>you</strong> provide.</p>
 <h2>Who we are</h2>
 <p>The App is published by <strong>1XP Inc.</strong> (&quot;we&quot;). We do not operate any backend servers that receive your content, and we have no account system.</p>
 <h2>What stays on your device</h2>
@@ -55,10 +55,19 @@
 <li><strong>Google AI Studio</strong>: tapping &quot;Get a free key&quot; opens Google AI Studio in Safari so you can create a key. That is a normal Safari session with Google.</li>
 <li><strong>Feature configuration</strong>: at launch the App fetches a small static configuration file (feature flags) over HTTPS. This is a plain download — <strong>no personal data, identifiers, or content are sent</strong> in the request.</li>
 </ul>
+<h2>Crash reports and usage statistics (Firebase)</h2>
+<p>To find out why the App crashes or misbehaves, and which features are actually used, the App uses Google&#x27;s <strong>Firebase Crashlytics</strong> (crash reporting) and <strong>Google Analytics for Firebase</strong> (usage statistics). This is everything that is sent to Google&#x27;s servers:</p>
+<ul>
+<li>On a crash: the stack trace, App version, device model and iOS version, and the interpreting settings in effect (capture mode, target language).</li>
+<li>Usage statistics: when an interpreting session starts, ends or fails and how long it ran, the capture mode (microphone / browser / Apple Watch), the target language, and whether the feedback or review screen was opened. Google Analytics adds its <strong>automatic</strong> basics to these: standard events such as app open, app update, screen changes and time in app; device model, iOS version, App version and language setting; and a <strong>country-level approximate location</strong> inferred from the connecting IP address (the IP address itself is not stored). Everything carries a random <strong>app-instance ID</strong> generated per installation (it disappears when you uninstall).</li>
+</ul>
+<p><strong>Never sent:</strong> audio, transcripts or translations, translation context, your Gemini API key, personal information such as name or e-mail, the advertising identifier (IDFA), precise location (there is no location permission). Nothing is used for advertising and nothing is linked across apps or websites. Retention follows Google&#x27;s Firebase policy (crash reports 90 days, usage statistics 2 months — the minimum we can set).</p>
+<h2>Feedback e-mail</h2>
+<p>&quot;Send feedback&quot; in Settings opens your own Mail app with the App version, device model and iOS version pre-filled in the body. Nothing is sent until you press send; when you do, that message (including your sender address and whatever you wrote) arrives at <code>developer@1xp.com</code>. We use it only to handle your request, do not keep it once the request is closed, and never pass it on. Write to the same address if you want it deleted.</p>
 <h2>What we do NOT do</h2>
 <ul>
-<li>We do <strong>not</strong> collect, store, or transmit your data to ourselves.</li>
-<li>We do <strong>not</strong> use analytics or advertising SDKs.</li>
+<li>We do <strong>not</strong> collect, store, or transmit your audio, transcripts or settings to ourselves.</li>
+<li>We do <strong>not</strong> use advertising SDKs, and no analytics beyond the crash reporting and usage statistics described above.</li>
 <li>We do <strong>not</strong> track you across apps or websites.</li>
 <li>We have <strong>no</strong> user accounts.</li>
 </ul>
