@@ -27,14 +27,14 @@
 <body>
 <h1>개인정보처리방침 — AI 실시간 통역 (Android)</h1>
 <p><em>최종 수정일: 2026-09-11</em></p>
-<p>AI 실시간 통역(&quot;이 앱&quot;)은 실시간 음성 통역 앱입니다. 이 방침은 여러분의 데이터에 무슨 일이 일어나는지를 설명합니다. 요약하면: <strong>저희는 서버를 운영하지 않고, 여러분에 대해 아무것도 수집하지 않습니다.</strong> 번역은 <strong>여러분이 직접 발급한 API 키</strong>로 Google의 Gemini API가 수행합니다.</p>
+<p>AI 실시간 통역(&quot;이 앱&quot;)은 실시간 음성 통역 앱입니다. 이 방침은 여러분의 데이터에 무슨 일이 일어나는지를 설명합니다. 요약하면: <strong>저희는 서버를 운영하지 않고, 익명 오류 보고·사용 통계 외에는 여러분에 대해 아무것도 수집하지 않습니다.</strong> 번역은 <strong>여러분이 직접 발급한 API 키</strong>로 Google의 Gemini API가 수행합니다.</p>
 <h2>만든 사람</h2>
 <p>이 앱은 개인 개발자가 만들었습니다. 여러분의 콘텐츠를 받는 백엔드 서버를 운영하지 않으며, 계정 시스템이 없습니다.</p>
 <h2>기기에만 저장되는 것</h2>
 <p>다음은 <strong>여러분의 기기에만</strong> 저장되며, 저희에게 전송되지 않습니다.</p>
 <ul>
 <li><strong>Google Gemini API 키</strong> — 어디로 가는지, 어떻게 확인하는지, 안전하게 쓰는 법: <a href="https://1xp-ai.github.io/sonori-policy/key-safety.html">API 키는 어디로 가나요</a>. Android Keystore가 관리하는 키(기기가 지원하면 하드웨어 보호)로 암호화(AES-256/GCM)되어 앱 전용 저장소에 보관됩니다.</li>
-<li><strong>앱 설정</strong> — 통역 대상 언어, 통역 음성, 통역 컨텍스트(주제·용어 메모), 출력 경로, 캡처 모드, 화면 유지 여부.</li>
+<li><strong>앱 설정</strong> — 통역 대상 언어, 통역 음성, 통역 컨텍스트(주제·용어 메모), 출력 경로, 캡처 모드, 화면 유지 여부. (단, 대상 언어와 캡처 모드 두 값은 사용 통계 이벤트에 붙어 전송됩니다 — 아래 &quot;오류 보고와 사용 통계&quot;.)</li>
 <li><strong>인앱 브라우저의 방문 기록·북마크</strong> — 주소창의 추천 목록을 만들기 위해 기기 내부 저장소에만 보관합니다. 페이지 내용이나 로그인 정보를 따로 수집·전송하지 않으며, 브라우저 쿠키·세션은 안드로이드 WebView가 앱 전용 영역에 관리합니다.</li>
 </ul>
 <p>앱을 삭제하면 위 데이터는 함께 사라집니다.</p>
@@ -66,7 +66,7 @@
 <p>설정의 &quot;피드백 보내기&quot;는 여러분의 메일 앱을 열고 앱 버전·기기 모델·Android 버전을 본문에 미리 채워 넣습니다. 보내기를 누르기 전까지는 아무것도 전송되지 않으며, 보내면 그 메일(보낸 사람 주소와 적으신 내용 포함)이 <code>developer@1xp.com</code> 으로 옵니다. 문의 처리 목적으로만 쓰고, 처리가 끝나면 보관하지 않으며, 다른 곳에 넘기지 않습니다. 삭제를 원하시면 같은 주소로 요청해 주세요.</p>
 <h2>저희가 <strong>하지 않는</strong> 것</h2>
 <ul>
-<li>오디오·자막·설정 등 여러분의 데이터를 저희 쪽으로 수집·저장·전송하지 <strong>않습니다</strong>.</li>
+<li>오디오·자막·통역 컨텍스트·API 키를 저희 쪽으로 수집·저장·전송하지 <strong>않습니다</strong>.</li>
 <li>광고 SDK를 사용하지 <strong>않습니다</strong>. 위 오류 보고·사용 통계 외의 분석 도구도 없습니다.</li>
 <li>앱이나 웹사이트를 넘나들며 여러분을 추적하지 <strong>않습니다</strong>.</li>
 <li>사용자 계정이 <strong>없습니다</strong>. 로그인도 회원가입도 없습니다.</li>
@@ -95,13 +95,13 @@
 <hr>
 <h1>Privacy Policy — Sonori (Android)</h1>
 <p><em>Last updated: 2026-09-11</em></p>
-<p>Sonori (&quot;the App&quot;) is a real-time speech interpretation app. The short version: <strong>we run no servers and collect nothing about you.</strong> Translation is performed by Google&#x27;s Gemini API using an API key that <strong>you</strong> provide.</p>
+<p>Sonori (&quot;the App&quot;) is a real-time speech interpretation app. The short version: <strong>we run no servers and collect nothing about you beyond anonymous crash reports and usage statistics.</strong> Translation is performed by Google&#x27;s Gemini API using an API key that <strong>you</strong> provide.</p>
 <h2>Who we are</h2>
 <p>The App is developed by an independent developer. We operate no backend servers that receive your content, and there is no account system.</p>
 <h2>What stays on your device</h2>
 <ul>
 <li>Your <strong>Google Gemini API key</strong> — where it goes and how to keep it safe: <a href="https://1xp-ai.github.io/sonori-policy/key-safety.html">API key safety</a>. Encrypted with AES-256/GCM under an Android Keystore-managed (hardware-backed where supported) key held in the Android Keystore, in app-private storage.</li>
-<li>App <strong>settings</strong>: target language, voice, interpreting context notes, output route, capture mode, keep-screen-on.</li>
+<li>App <strong>settings</strong>: target language, voice, interpreting context notes, output route, capture mode, keep-screen-on. (Two of them — target language and capture mode — are attached to usage-statistics events; see &quot;Crash reports and usage statistics&quot;.)</li>
 </ul>
 <p>Uninstalling the App removes all of it.</p>
 <h2>What is sent to Google (Gemini API)</h2>
@@ -132,7 +132,7 @@
 <p>&quot;Send feedback&quot; in Settings opens your own mail app with the App version, device model and Android version pre-filled in the body. Nothing is sent until you press send; when you do, that message (including your sender address and whatever you wrote) arrives at <code>developer@1xp.com</code>. We use it only to handle your request, do not keep it once the request is closed, and never pass it on. Write to the same address if you want it deleted.</p>
 <h2>What we do NOT do</h2>
 <ul>
-<li>We do <strong>not</strong> collect, store, or transmit your audio, transcripts or settings to ourselves.</li>
+<li>We do <strong>not</strong> collect, store, or transmit your audio, transcripts, translation context or API key to ourselves.</li>
 <li>We use <strong>no</strong> advertising SDKs, and no analytics beyond the crash reporting and usage statistics described above.</li>
 <li>We do <strong>not</strong> track you across apps or websites.</li>
 <li>There are <strong>no</strong> user accounts.</li>

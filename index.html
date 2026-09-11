@@ -37,7 +37,7 @@
 <ul>
 <li>Your Google Gemini <strong>API key</strong> (encrypted in the Keychain). Where it goes, how to verify that, and how to keep it safe: <a href="./key-safety.html">API key safety</a>.</li>
 <li>Browser <strong>history, bookmarks, and last-opened page</strong>.</li>
-<li>App <strong>settings</strong> (target language, voice, translation context, output route).</li>
+<li>App <strong>settings</strong> (target language, voice, translation context, output route). Two of them — target language and capture mode — are attached to usage-statistics events; see &quot;Crash reports and usage statistics&quot;.</li>
 </ul>
 <p>If you pair an Apple Watch, your API key and settings are synced <strong>directly to your Watch</strong> over Apple&#x27;s WatchConnectivity (device-to-device). They do not pass through us.</p>
 <h2>What is sent to Google (Gemini API)</h2>
@@ -66,7 +66,7 @@
 <p>&quot;Send feedback&quot; in Settings opens your own Mail app with the App version, device model and iOS version pre-filled in the body. Nothing is sent until you press send; when you do, that message (including your sender address and whatever you wrote) arrives at <code>developer@1xp.com</code>. We use it only to handle your request, do not keep it once the request is closed, and never pass it on. Write to the same address if you want it deleted.</p>
 <h2>What we do NOT do</h2>
 <ul>
-<li>We do <strong>not</strong> collect, store, or transmit your audio, transcripts or settings to ourselves.</li>
+<li>We do <strong>not</strong> collect, store, or transmit your audio, transcripts, translation context or API key to ourselves.</li>
 <li>We do <strong>not</strong> use advertising SDKs, and no analytics beyond the crash reporting and usage statistics described above.</li>
 <li>We do <strong>not</strong> track you across apps or websites.</li>
 <li>We have <strong>no</strong> user accounts.</li>
