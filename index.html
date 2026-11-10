@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Privacy Policy — Sonori</title>
-<meta name="description" content="Sonori privacy policy. We run no servers and collect nothing about you.">
+<title>Privacy Policy — Hear</title>
+<meta name="description" content="Hear privacy policy: interpretation, on-device options, Google API processing and Firebase analytics.">
 <style>
   :root { color-scheme: light dark; }
   body { margin:0 auto; max-width:44rem; padding:2.5rem 1.25rem 5rem;
@@ -27,9 +27,9 @@
 </style>
 </head>
 <body>
-<h1>Privacy Policy — Sonori</h1>
-<p><em>Last updated: 2026-09-11</em></p>
-<p>Sonori (&quot;the App&quot;) is a real-time speech interpretation app. This policy explains what happens to your data. The short version: <strong>we run no servers and collect nothing about you beyond anonymous crash reports and usage statistics — plus whatever you choose to e-mail us.</strong> Translation is performed by Google&#x27;s Gemini API using an API key that <strong>you</strong> provide.</p>
+<h1>Privacy Policy — Hear</h1>
+<p><em>Last updated: 2026-11-10</em></p>
+<p>Hear (&quot;the App&quot;) is a real-time speech interpretation app. <strong>We do not operate servers that receive your audio or transcripts.</strong> You can use Google&#x27;s Gemini API with your own key, or select a supported on-device translation experiment. Release builds use Firebase for crash reports and usage statistics. You can also choose to contact us by e-mail.</p>
 <h2>Who we are</h2>
 <p>The App is published by <strong>1XP Inc.</strong> (&quot;we&quot;). We do not operate any backend servers that receive your content, and we have no account system.</p>
 <h2>What stays on your device</h2>
@@ -40,28 +40,34 @@
 <li>App <strong>settings</strong> (target language, voice, translation context, output route). Two of them — target language and capture mode — are attached to usage-statistics events; see &quot;Crash reports and usage statistics&quot;.</li>
 </ul>
 <p>If you pair an Apple Watch, your API key and settings are synced <strong>directly to your Watch</strong> over Apple&#x27;s WatchConnectivity (device-to-device). They do not pass through us.</p>
+<h2>Audio, captions, and diagnostic files</h2>
+<p>The App does not create saved audio recordings or transcript/error diagnostic files, and has no diagnostic-recording or diagnostic-export feature. Audio and captions are processed in memory during interpretation. Web/media playback can use system caches; HLS playback also uses temporary segment files that are removed after decoding. These are not saved session recordings.</p>
+<p>On upgrade, the App removes diagnostic files created by older versions from its own local storage. Cleanup is retried on launch/foreground and, on iOS, when protected files become available after unlocking.</p>
+<p>App-written media logs contain media type and host metadata, not URL paths, query strings, credentials, audio, captions, or raw page error messages.</p>
 <h2>What is sent to Google (Gemini API)</h2>
-<p>To translate, the App sends <strong>audio you capture</strong> (microphone, or media playing in the in-app browser/player) and the resulting <strong>text</strong> to the <strong>Google Gemini API</strong>, authenticated with <strong>your own API key</strong>. This is a direct connection between your device and Google under your own Google account/key.</p>
+<p>When a Gemini translation engine is selected, the App sends <strong>audio you capture</strong> (microphone, or media playing in the in-app browser/player) and the resulting <strong>text</strong> to the <strong>Google Gemini API</strong>, authenticated with <strong>your own API key</strong>. This is a direct connection between your device and Google under your own Google account/key.</p>
 <p>This data is processed by Google under <strong>Google&#x27;s Privacy Policy and the Gemini API Terms</strong>:</p>
 <ul>
 <li>https://policies.google.com/privacy</li>
 <li>https://ai.google.dev/gemini-api/terms</li>
 </ul>
-<p>The App does not record, store, or retain your audio. It is streamed for translation and discarded. We never receive it.</p>
+<p>The App streams audio for interpretation and discards processing buffers. We never receive it. Google&#x27;s processing and retention depend on your Google API account and the applicable Gemini API terms; the App does not control them.</p>
 <p>The optional &quot;AI Brief&quot; feature sends the topic keywords you type to the same Gemini API (with Google Search grounding) using your key.</p>
+<h2>On-device translation and optional remote speech</h2>
+<p>Supported Apple speech/translation and Apple Intelligence experiments process speech and text on the device. If you choose a Gemini speech renderer with a local translation engine, translated text is sent to Google to generate speech. Choosing a local translation engine does not make an explicitly selected remote speech renderer local. Optional model downloads contact Apple or the configured model host.</p>
 <h2>Other network connections</h2>
 <ul>
 <li><strong>Web browsing</strong>: in browser mode, the App loads the web pages and media you navigate to, exactly like a browser. Those sites are subject to their own privacy policies.</li>
 <li><strong>Google AI Studio</strong>: tapping &quot;Get a free key&quot; opens Google AI Studio in Safari so you can create a key. That is a normal Safari session with Google.</li>
-<li><strong>Feature configuration</strong>: at launch the App fetches a small static configuration file (feature flags) over HTTPS. This is a plain download — <strong>no personal data, identifiers, or content are sent</strong> in the request.</li>
 </ul>
 <h2>Crash reports and usage statistics (Firebase)</h2>
 <p>To find out why the App crashes or misbehaves, and which features are actually used, the App uses Google&#x27;s <strong>Firebase Crashlytics</strong> (crash reporting) and <strong>Google Analytics for Firebase</strong> (usage statistics). This is everything that is sent to Google&#x27;s servers:</p>
 <ul>
 <li>On a crash: the stack trace, App version, device model and iOS version, and the interpreting settings in effect (capture mode, target language).</li>
-<li>Usage statistics: when an interpreting session starts, ends or fails and how long it ran, the capture mode (microphone / browser / Apple Watch), the target language, and whether the feedback or review screen was opened. Google Analytics adds its <strong>automatic</strong> basics to these: standard events such as app open, app update, screen changes and time in app; device model, iOS version, App version and language setting; and a <strong>country-level approximate location</strong> inferred from the connecting IP address (the IP address itself is not stored). Everything carries a random <strong>app-instance ID</strong> generated per installation (it disappears when you uninstall).</li>
+<li>Usage statistics: when an interpreting session starts, ends or fails and how long it ran, the capture mode (microphone / browser / Apple Watch), the target language, and whether the feedback or review screen was opened. Google Analytics adds its <strong>automatic</strong> basics to these: standard events such as app open, app update, screen changes and time in app; device model, iOS version, App version and language setting; and a <strong>country-level approximate location</strong> inferred from the connecting IP address (the IP address itself is not stored). Analytics uses an <strong>app-instance identifier</strong> for an installation. Firebase can also use device/vendor and crash-installation identifiers. These identifiers can associate events or crash reports from the same installation or device; having no Hear account does not make all SDK data anonymous. Identifier lifetimes and reset behavior depend on the SDK and device settings.</li>
 </ul>
-<p><strong>Never sent:</strong> audio, transcripts or translations, translation context, your Gemini API key, personal information such as name or e-mail, the advertising identifier (IDFA), precise location (there is no location permission). Nothing is used for advertising and nothing is linked across apps or websites. Retention follows Google&#x27;s Firebase policy (crash reports 90 days, usage statistics 2 months — the minimum we can set).</p>
+<p>For App Store disclosure, we treat the declared data as linked to an account or device: Gemini requests use your Google API credentials, and Firebase data can be associated through installation/device identifiers. This does not mean that we receive your audio or know your name. Google may de-identify content for particular uses; its account terms and processing rules still apply.</p>
+<p><strong>Never sent:</strong> audio, transcripts or translations, translation context, your Gemini API key, personal information such as name or e-mail, the advertising identifier (IDFA), precise location (there is no location permission). Nothing is used for advertising and nothing is linked across apps or websites. Firebase processing and retention are described in <a href="https://firebase.google.com/support/privacy">Privacy and Security in Firebase</a>. Its <a href="https://firebase.google.com/docs/ios/app-store-data-collection">Apple disclosure guide</a> and <a href="https://support.google.com/analytics/answer/10285841">Analytics disclosure guide</a> describe SDK collection. Removing the App&#x27;s recording feature does not disable Firebase crash reports or usage statistics.</p>
 <h2>Feedback e-mail</h2>
 <p>&quot;Send feedback&quot; in Settings opens your own Mail app with the App version, device model and iOS version pre-filled in the body. Nothing is sent until you press send; when you do, that message (including your sender address and whatever you wrote) arrives at <code>developer@1xp.com</code>. We use it only to handle your request, do not keep it once the request is closed, and never pass it on. Write to the same address if you want it deleted.</p>
 <h2>What we do NOT do</h2>
@@ -72,9 +78,9 @@
 <li>We have <strong>no</strong> user accounts.</li>
 </ul>
 <h2>Microphone</h2>
-<p>The App uses the microphone <strong>only</strong> while you are actively translating, to capture speech for real-time translation. Audio is not saved.</p>
-<h2>Children</h2>
-<p>The App is not directed to children. Because it includes an unrestricted web browser, it is rated 17+.</p>
+<p>The App uses the microphone <strong>only</strong> while you are actively translating, to capture speech for real-time translation. Microphone audio is not saved as a recording.</p>
+<h2>Age requirements</h2>
+<p>Hear is intended for adults aged 18 and over and is not directed to children. Gemini API use requires users to be at least 18. Store age classifications may vary by country or platform; an age classification does not waive Google&#x27;s API requirements.</p>
 <h2>Your choices</h2>
 <ul>
 <li>Remove your API key anytime in Settings (&quot;Delete key&quot;).</li>
