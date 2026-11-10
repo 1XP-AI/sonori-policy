@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Support — Sonori</title>
-<meta name="description" content="Sonori support: getting started, common questions, and how to reach us.">
+<title>Support — Hear</title>
+<meta name="description" content="Hear support: English and Korean interface, Gemini key setup, language settings, and help.">
 <style>
   :root { color-scheme: light dark; }
   body { margin:0 auto; max-width:44rem; padding:2.5rem 1.25rem 5rem;
@@ -27,19 +27,23 @@
 </style>
 </head>
 <body>
-<h1>Sonori — Support</h1>
-<p>Sonori interprets lectures, talks, and web media in real time: it shows live subtitles and speaks the translation over the original audio.</p>
+<h1>Hear — Support</h1>
+<p>Hear interprets lectures, talks, and supported web media in real time: it shows live subtitles and speaks the translation over the original audio.</p>
 <p>Questions or problems: <strong>developer@1xp.com</strong></p>
 <h2>Getting started</h2>
-<p>Sonori has no account and no subscription. It uses Google&#x27;s Gemini API with a key <strong>you</strong> provide, so your audio goes from your device straight to Google.</p>
-<p>1. Open <strong>Settings</strong> inside the app. 2. Tap <strong>Get a free key</strong> — this opens Google AI Studio, where you can create a Gemini API key in a few seconds. 3. Paste the key into the <strong>API Key</strong> field. 4. Pick a source and a target language, then start listening.</p>
+<p>Hear does not require a Hear account. Its default interpretation engine uses Google&#x27;s Gemini API with a key <strong>you</strong> provide, so your audio goes from your device straight to Google.</p>
+<p>1. Open <strong>More (⋮ / …) → Settings</strong> inside the app. 2. Tap <strong>Get a free key</strong> — this opens Google AI Studio, where you can create a Gemini API key with your Google account. 3. Paste the key into the <strong>Gemini API key</strong> field and tap <strong>Save key</strong>. 4. Choose <strong>Target language</strong> and your audio input, then start interpreting.</p>
+<p>An internet connection is required for Gemini. Google&#x27;s free-tier limits and API charges depend on its policies and your account; separate API charges may apply.</p>
+<h2>App language and translation language</h2>
+<p>Hear&#x27;s interface is available in <strong>English and Korean</strong> and follows your device&#x27;s app-language settings. The interface language and the language you interpret into are separate settings.</p>
+<p>On first use, Hear selects a supported language from your device preferences for interpretation, with English as the fallback. Change <strong>Settings → Target language</strong> at any time. Updates and later changes to your device&#x27;s language keep the interpretation language you have already chosen.</p>
 <h2>Common questions</h2>
-<p><strong>I hear an echo, or the translation talks over itself.</strong> Use earphones. When the speaker plays the translation out loud, the microphone picks it up again. Earphones remove the loop entirely.</p>
-<p><strong>Nothing is transcribed.</strong> Check that the API key is entered and that microphone permission is granted in iOS Settings. If the key was revoked or its quota is exhausted, Google rejects the connection and the app shows an error.</p>
-<p><strong>Can I use it without an internet connection?</strong> No. Translation happens in Google&#x27;s Gemini API, so a network connection is required.</p>
+<p><strong>I hear an echo, or the translation talks over itself.</strong> Use earphones. When the speaker plays the translation out loud, the microphone can pick it up again. Earphones reduce that feedback.</p>
+<p><strong>Nothing is transcribed.</strong> Check that the API key is entered and that microphone permission is granted in your device settings. If the key was revoked or its quota is exhausted, Google rejects the connection and the app shows an error.</p>
+<p><strong>Can I use it without an internet connection?</strong> The default Gemini engine requires a network connection. Experimental local engines on supported Apple devices have separate device, language, and model requirements; check their availability in Settings.</p>
 <p><strong>Does it work on Apple Watch?</strong> Yes. Pair the Watch app to hear the translation on your wrist and read the subtitles there. Settings and the key sync directly from the iPhone to the Watch.</p>
 <p><strong>Which languages are supported?</strong> 77 languages, listed in the app&#x27;s language picker.</p>
-<p><strong>What does it cost?</strong> The app is free. You pay Google directly for the Gemini API usage under your own key. The app shows a running cost estimate while a session is active.</p>
+<p><strong>What does it cost?</strong> The app is free to install. Any Gemini API charges are billed by Google under your own key. Google&#x27;s free usage limits and prices can vary with your account.</p>
 <h2>Privacy</h2>
 <p>We run no servers. Beyond anonymous crash reports and usage statistics (Firebase — no audio, transcripts or keys), we collect nothing about you. Your API key is stored encrypted on your device. See the <a href="./">privacy policy</a>.</p>
 <nav><a href="./">Privacy (iOS)</a> · <a href="./android.html">Privacy (Android)</a> · <a href="./support.html">Support</a> · <a href="./key-safety.html">API key safety</a> · developer@1xp.com</nav>
